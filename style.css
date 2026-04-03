@@ -18,9 +18,8 @@ body {
 	color: var(--primary-color);
 	font-size: 16px;
 	box-sizing: border-box;
-        display: flex; /* Use Flexbox for the main layout */
-        min-height: 100vh; /* Ensure the layout takes the full viewport height */
-        font-family: sans-serif;
+        display: flex;			/* Use Flexbox for the main layout */
+        min-height: 100vh;		/* Ensure the layout takes the full viewport height */
 }
 
 button {
@@ -29,7 +28,6 @@ button {
 	padding: 8px;
 	background-color: var(--primary-color);
 	color: var(--white-color);
-	font-size: 16px;
 	height: 32px;
 	min-height: 32px;
 }
@@ -62,20 +60,6 @@ footer {
 	align-items: center;
 }
 
-main {
-	padding-left: 20vw;
-	padding-right: 20vw;
-	min-height: calc(100vh - 288px);
-}
-
-nav {
-	background-color: var(--white-color);
-	padding: 8px;
-	color: var(--primary-color);
-	display: flex;
-	//align-items: center;
-}
-
 table {
 	width: 100%;
 	border-collapse: collapse;
@@ -88,10 +72,7 @@ table th {
 	min-height: 32px;
 	padding: 4px;
 	text-align: left;
-	border-bottom: 2px solid var(--primary-color);
-	//background-color: var(--primary-color);
-	//color: var(--white-color);
-	
+	border-bottom: 2px solid var(--primary-color);	
 }
 table tr:nth-child(even) {
 	background-color: var(--primary-color-muted);
@@ -143,13 +124,25 @@ table tr:nth-child(odd) {
 }
 
 .main {
-            flex-grow: 1; /* This makes the main section occupy the remaining width */
-            padding: 8px;
-            background-color: var(--white-color); /* White background */
-	margin-left: 216px;
-	overflow-y: auto; 
-            /* Optional: for the main content to scroll independently if 'position: fixed' is used on the nav */
-        }
+	background-color: var(--white-color);
+	overflow-y: auto;		/* Main scrolls */
+	padding: 8px;			/* Only internal padding */
+	transition: margin-left 0.3s ease;
+}
+@media (max-width: 599px) {
+	#nav-toggle:checked ~ .nav-left ~ .main,
+	#nav-toggle:checked ~ .main {
+		margin-left: 216px; 	/* Main shifts right only when nav is visible */
+	}
+	.main {
+		margin-left: 16px;
+	}
+}
+@media (min-width: 600px) {
+	.main  {
+		margin-left:  216px; 	 /* Main always shifted to 216px */
+	}
+}
 
 .nav-left {
 	width: 200px;
@@ -157,9 +150,37 @@ table tr:nth-child(odd) {
 	background-color: var(--primary-color);
 	color: var(--white-color);
 	padding: 8px;
-	position: fixed; height: 100vh;
-	/* Optional: for a truly fixed nav that doesn't scroll with content */
+	position: fixed;			/* Fixed to viewport */
+	top: 0;
+	left: 0;
+ 	height: 100vh;
+	overflow-y: auto;			/* Nav scrolls independently */
+	z-index: 1000;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease;
+	float: left;
 }
+@media (max-width: 599px) {
+	.nav-left {
+		transform: translateX(-100%);	/* Nav hidden by default */
+		margin-top: 32px;		/* Make room for hamburger menu button */
+	}
+	#nav-toggle:checked ~ .nav-left {	/* Nav visible when checked */
+		transform: translateX(0);
+	}
+	#logo {
+		display: none;			/* hide logo */
+	}
+}
+@media (min-width: 600px) {
+	.nav-left {
+		transform: translateX(0);		/* Nav always visible */
+  	}
+	#logo {
+		display: block;			/* Show logo */
+	}
+}
+
 .nav-left>div {
 	display: flex;
 	align-items: center;
@@ -168,6 +189,32 @@ table tr:nth-child(odd) {
 .nav-left>div:hover {
 	background-color: #ffffff25;
 	cursor: pointer;
+}
+
+.nav-toggle {					/* Toggle button */
+	position: fixed;
+	z-index: 1100;
+	cursor: pointer;
+	display: none;				/* hidden by default */
+	padding: 2px 4px;
+	border: 2px solid var(--primary-color);
+	border-radius: 8px;
+	background-color: var(--white-color);
+	color: var(--primary-color);
+}
+@media (max-width: 599px) {
+	.nav-toggle {
+		display: block;			/* Show toggle */
+	}
+}
+
+@media (min-width: 600px) {
+	.nav-toggle {
+		display: none;			/* Toggle hidden */
+	}
+}
+.nav-toggle-checkbox {
+	display: none;				/* Hide checkbox */
 }
 
 .tab {	border: none;
@@ -187,85 +234,3 @@ table tr:nth-child(odd) {
 .tab.selected {
 	background-color: var(--primary-color);
 }
-	
-#quote-container {
-	text-align: center;
-	color: var(--primary-color-light);
-	font-size: 24px;
-	margin-top: 48px;
-	margin-bottom: 96px;
-	min-height: 96px;
-}
-
-#quote-container::before {
-	content: open-quote "Their success is proof that when we invest in talent here at home, we build both opportunity and resilience for our city\'s future." close-quote " -Lynn McBee, Workfoce Czar for the City of Dallas";
-	opacity: 0;
-	animation: quote-replace 21s ease-in-out 0s infinite forwards, quote-fade 7s ease-in-out 0s infinite forwards;
-}
-
-@keyframes quote-replace {
-	0%, 33.33% {
-		content: open-quote "Their success is proof that when we invest in talent here at home, we build both opportunity and resilience for our city\'s future." close-quote " -Lynn McBee, Workfoce Czar for the City of Dallas";
-	}
-  	33.34%, 66.66% {
-		content: open-quote "When mindset and mentorship align, the switch flips and growth becomes inevitable" close-quote " -Sushma Krishnamurthy, CEO, InzpireU";
-	}
-  	66.67%, 100% {
-		content: open-quote "It\'s encouraging us to promote personal commitments to self-development as part of our career path." close-quote " -Roseanna Ohiagu, Scholarship Recipient";
-	}
-}
-@keyframes quote-fade {
-	10%, 90% {
-		opacity: 1;
-  	}
-	0%, 100% {
-		opacity: 0;
-	}
-  }
-}
-
-
-
-
-/* Gauges */
-  svg#gauge {
-    display: block;
-    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
-  }
-
-  .controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-
-  input[type=range] {
-    -webkit-appearance: none;
-    width: 300px;
-    height: 4px;
-    background: #1e2530;
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
-  }
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #e0e6f0;
-    border: 3px solid #0d0f14;
-    box-shadow: 0 0 0 1px #5a6a80;
-    cursor: pointer;
-    transition: transform 0.15s;
-  }
-  input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
-
-  .tick-labels {
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    font-size: 11px;
-    color: #3a4a60;
-  }
