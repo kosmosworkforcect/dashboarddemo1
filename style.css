@@ -189,17 +189,11 @@ table tr:nth-child(odd) {
 	#nav-toggle:checked ~ .nav-left {	/* Nav visible when checked */
 		transform: translateX(0);
 	}
-	#logo {
-		display: none;			/* hide logo */
-	}
 }
 @media (min-width: 600px) {
 	.nav-left {
 		transform: translateX(0);		/* Nav always visible */
   	}
-	#logo {
-		display: block;			/* Show logo */
-	}
 }
 
 .nav-left>div {
@@ -210,10 +204,15 @@ table tr:nth-child(odd) {
 .nav-left>div:hover {
 	background-color: #ffffff25;
 	cursor: pointer;
+	padding: 4px;
+	margin: -4px -8px 12px -4px;">
+}
+.nav-left>div:has(img):hover {
+	background-color: unset;
 }
 @media (max-width: 599px) {
 	.nav-left>div:has(img) {
-		display: none;
+		display: none;			/* Hide logo on small screen with menu toggled on */
 	}
 }
 
