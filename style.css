@@ -62,11 +62,19 @@ footer {
 
 table {
 	width: 100%;
+	max-width: calc(100% - 16px);
 	border-collapse: collapse;
 }
 table td {
 	min-height: 32px;
 	padding: 4px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+@media (max-width: 512px) {
+	table td {
+		max-width: 50px;
+	}
 }
 table th {
 	min-height: 32px;
