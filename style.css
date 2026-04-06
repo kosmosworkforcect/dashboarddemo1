@@ -156,7 +156,7 @@ table tr:nth-child(odd) {
 		margin-left: 216px; 	/* Main shifts right only when nav is visible */
 	}
 	.main {
-		margin-left: 16px;
+		margin-left: 0;
 	}
 }
 @media (min-width: 600px) {
@@ -221,11 +221,14 @@ table tr:nth-child(odd) {
 	z-index: 1100;
 	cursor: pointer;
 	display: none;				/* hidden by default */
-	padding: 0 4px 2px 4px;
-	border: 2px solid var(--primary-color);
-	border-radius: 8px;
+	padding: 1px 4px 1px 3px;
+	border: 1px solid var(--primary-color-light);
+	border-radius: 50%;
 	background-color: var(--white-color);
 	color: var(--primary-color);
+	min-width: 16px;
+	max-width: 16px;
+	text-align: center;
 }
 @media (max-width: 599px) {
 	.nav-toggle {
