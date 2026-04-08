@@ -234,6 +234,8 @@ table tr:nth-child(odd) {
 	cursor: pointer;
 	display: none;				/* hidden by default */
 	padding: 1px 4px 1px 3px;
+	top: 4px;
+	left: 4px;
 	border: 1px solid var(--primary-color-light);
 	border-radius: 50%;
 	background-color: var(--white-color);
