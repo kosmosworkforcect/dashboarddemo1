@@ -26,13 +26,20 @@ function parseCellValue(text) {
     if (!isNaN(num)) return num / 100;
   }
 
+  // Date: flexible formats
+  const date = new Date(cleaned);
+  if (!isNaN(date.getTime())) {
+    return {
+      year: date.getFullYear(),
+      month: date.getMonth(),
+      day: date.getDate(),
+      time: date.getTime()
+    };
+  }
+
   // Number: "123", "45.67"
   const num = parseFloat(cleaned);
   if (!isNaN(num)) return num;
-
-  // Date: flexible formats
-  const date = new Date(cleaned);
-  if (!isNaN(date.getTime())) return date.getTime();
 
   // Text
   return cleaned;
@@ -48,11 +55,19 @@ function sortTable(colIndex) {
     const aVal = parseCellValue(a.cells[colIndex].textContent);
     const bVal = parseCellValue(b.cells[colIndex].textContent);
     let comp;
-    if (typeof aVal === 'number' && typeof bVal === 'number' && !isNaN(aVal) && !isNaN(bVal)) {
+
+    if (
+      aVal && bVal &&
+      typeof aVal === 'object' && typeof bVal === 'object' &&
+      'year' in aVal && 'year' in bVal
+    ) {
+      comp = aVal.year - bVal.year || aVal.month - bVal.month || aVal.day - bVal.day;
+    } else if (typeof aVal === 'number' && typeof bVal === 'number' && !isNaN(aVal) && !isNaN(bVal)) {
       comp = aVal - bVal;
     } else {
       comp = String(aVal).localeCompare(String(bVal));
     }
+
     return comp * direction;
   });
   rows.forEach(r => table.querySelector("tbody").appendChild(r));
