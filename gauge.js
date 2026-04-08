@@ -25,22 +25,22 @@ function makeGauge(container, label, val = 50) {
 				<clipPath id="clip-${id}">
 					<circle cx="180" cy="180" r="162"/>
 				</clipPath>
-    <filter id="shadow">
-      <feDropShadow dx="4" dy="4" stdDeviation="8" flood-color="black"/>
-    </filter>
+				<filter id="shadow">
+					<feDropShadow dx="4" dy="4" stdDeviation="8" flood-color="black"/>
+				</filter>
 			</defs>
-			<circle cx="180" cy="180" r="162" fill="#ffffff"/>
-				<g clip-path="url(#clip-${id})">
-					<g class="arc"></g>
-					<g class="ticks"></g>
-					<text class="val" x="180" y="258" text-anchor="middle" font-size="56" fill="none">0</text>							// score
-					<text x="180" y="284" text-anchor="middle" font-size="11" font-weight="500" letter-spacing="3" fill="var(--black-color)">${label}</text>	// label
-					<line class="needle" stroke="#1a2030" stroke-width="4" stroke-linecap="round"/>									// needle
-					<polygon class="tip" fill="#1a2030"/>
-					<circle cx="180" cy="180" r="11" fill="#1a2030"/>
-					<circle cx="180" cy="180" r="5" fill="#ffffff"/>
-				</g>
-			<circle cx="180" cy="180" r="162" fill="none" stroke="#c8d0dc" stroke-width="1" filter="url(#shadow)" />
+			<circle cx="180" cy="180" r="162" fill="#ffffff" filter="url(#shadow)" />
+			<g clip-path="url(#clip-${id})">
+				<g class="arc"></g>
+				<g class="ticks"></g>
+				<text class="val" x="180" y="258" text-anchor="middle" font-size="56" fill="none">0</text>							// score
+				<text x="180" y="284" text-anchor="middle" font-size="11" font-weight="500" letter-spacing="3" fill="var(--black-color)">${label}</text>	// label
+				<line class="needle" stroke="var(--black-color)" stroke-width="4" stroke-linecap="round"/>							// needle
+				<polygon class="tip" fill="var(--black-color)"/>												// needle tip
+				<circle cx="180" cy="180" r="11" fill="var(--black-color)"/>											// pivot outside
+				<circle cx="180" cy="180" r="5" fill="var(--black-color)"/>											// pivot inside
+			</g>
+
 		</svg>
   </div>`);
 
