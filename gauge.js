@@ -12,7 +12,7 @@ const deg = r => r * Math.PI / 180;
 const polar = (a, d) => ({ x: CX + d * Math.cos(deg(a)), y: CY + d * Math.sin(deg(a)) });
 const valA = v => START + (v / 100) * TOTAL;
 const valW = v => MINW + (v / 100) * (MAXW - MINW);
-const col = v => v <= 50 ? 'red' : v <= 80 ? '#e09820' : '#28b355';
+const col = v => v <= 50 ? '#e03a3a' : v <= 80 ? '#e09820' : '#28b355';
 
 function makeGauge(container, label, val = 50) {
 	const id = "gauge" + (++gaugeCount); // auto-generated unique id
@@ -25,21 +25,22 @@ function makeGauge(container, label, val = 50) {
 				<clipPath id="clip-${id}">
 					<circle cx="180" cy="180" r="162"/>
 				</clipPath>
-				<filter id="shadow">
-					<feDropShadow dx="4" dy="4" stdDeviation="8" flood-color="var(--black-color)"/>						/* shadow around gauge */
-				</filter>
+    <filter id="shadow">
+      <feDropShadow dx="4" dy="4" stdDeviation="8" flood-color="black"/>
+    </filter>
 			</defs>
-			<circle cx="180" cy="180" r="162" fill="var(--white-color)" filter="url(#shadow)" />
-			<g clip-path="url(#clip-${id})">
-				<g class="arc"></g>
-				<g class="ticks"></g>
-				<text class="val" x="180" y="258" text-anchor="middle" font-size="56" fill="none">0</text>					/* score */
-				<text x="180" y="284" text-anchor="middle" font-size="11" font-weight="500" letter-spacing="3" fill="#aab4c4">${label}</text>	/* label below score */
-				<line class="needle" stroke="var(--black-color)" stroke-width="4" stroke-linecap="round" />					/* needle */
-				<polygon class="tip" fill="var(--black-color)" />										/* tip of needle */
-				<circle cx="180" cy="180" r="11" fill="var(--black-color)" />									/* center pivot of needle */
-				<circle cx="180" cy="180" r="5" fill="var(--white-color)" />									/* middle of center pivot */
-			</g>
+			<circle cx="180" cy="180" r="162" fill="#ffffff"/>
+				<g clip-path="url(#clip-${id})">
+					<g class="arc"></g>
+					<g class="ticks"></g>
+					<text class="val" x="180" y="258" text-anchor="middle" font-size="56" fill="#1a2030">0</text>
+					<text x="180" y="284" text-anchor="middle" font-size="11" font-weight="500" letter-spacing="3" fill="#aab4c4">${label}</text>
+					<line class="needle" stroke="#1a2030" stroke-width="4" stroke-linecap="round"/>
+					<polygon class="tip" fill="#1a2030"/>
+					<circle cx="180" cy="180" r="11" fill="#1a2030"/>
+					<circle cx="180" cy="180" r="5" fill="#ffffff"/>
+				</g>
+			<circle cx="180" cy="180" r="162" fill="none" stroke="#c8d0dc" stroke-width="1" filter="url(#shadow)" />
 		</svg>
   </div>`);
 
