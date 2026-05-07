@@ -23,7 +23,7 @@
 				<h4>Purpose Alignment</h4>
 				<script>makeGauge(document.getElementById('gauge1'), 'HEALTH SCORE', 86);</script>
 			</div>
-			<dialog id="purposealignment"><!-- MISSING FUNCTIONALITY MODAL -->
+			<dialog id="purposealignment"><!-- GAUGE1 MODAL -->
 				<h2>Purpose Alignment</h2>
 				<p>Aligning individual purpose with a company's mission is one of the most powerful drivers of organizational performance. 
 					Employees with a strong sense of purpose are 
@@ -42,7 +42,7 @@
 					<button style="float: left;" onclick="window.location.href='purpose.html'">Recommendations</button>
 					<button style="float: right;">Close</button>
 				</form>
-			</dialog><!-- END OF MISSING FUNCTIONALITY MODAL -->
+			</dialog><!-- END OF GAUGE1 MODAL -->
 			<div class="card" id="gauge2" style="width: 200px; text-align: center;" onclick="window.location.href='strengths.html'">
 				<h4>Leveraging Strengths</h4>
 				<script>makeGauge(document.getElementById('gauge2'), 'HEALTH SCORE', 79);</script>
@@ -85,7 +85,7 @@
 				<h4> My Team</h4>
 				<table>
 					<tr>
-						<td>Employees</td><td>27</td>
+						<td>Employees</td><td>13</td>
 						<td>
 							<svg width="112" height="32">
  								<rect x="8" y="8" width="0" height="16" 
@@ -93,12 +93,11 @@
 									stroke:var(--primary-color); stroke-width:1; fill-opacity:0.75;">
 									<animate attributeName="width" from="0" to="0" begin="0s" dur="1s" fill="freeze"/>
 								</rect>
-
 							</svg>
 						</td>
 					</tr>
 					<tr>
-						<td>Ready for promotion</td><td>12</td>
+						<td>Ready for promotion</td><td>6</td>
 						<td>
 							<svg width="112" height="32">
  								<rect x="8" y="8" width="0" height="16" 
@@ -110,7 +109,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Ready for outside opportunity</td><td>7</td>
+						<td>Ready for outside opportunity</td><td>3</td>
 						<td>
 							<svg width="112" height="32">
  								<rect x="8" y="8" width="0" height="16" 
@@ -123,7 +122,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Training goals met</td><td>20</td>
+						<td>Training goals met</td><td>10</td>
 						<td>
 							<svg width="112" height="32">
  								<rect x="8" y="8" width="0" height="16" 
@@ -136,7 +135,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td>Development tasks met</td><td>18</td>
+						<td>Development tasks met</td><td>9</td>
 						<td>
 							<svg width="112" height="32">
  								<rect x="8" y="8" width="0" height="16" 
@@ -150,7 +149,9 @@
 					</tr>
 				</table>
 			</div>
-			<button type="button">Add +</button>
+			<div style="width: 100%;"><!-- ADD BUTTON, ON ITS OWN ROW -->
+				<button type="button" onclick="document.getElementById('underconstruction').showModal()">Add +</button>
+			</div>
 		</div>
 	</div>
 </body>
