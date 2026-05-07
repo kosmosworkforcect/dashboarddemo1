@@ -75,24 +75,31 @@
 								<li><input type="checkbox" checked onclick="return false;"> Allen, Riley</li>
 								<li><input type="checkbox" checked onclick="return false;"> Bennett, Chloe</li>
 								<li><input type="checkbox" checked onclick="return false;"> Davis, Luna</li>
-								<li><input type="checkbox" checked onclick="return false;"> Hall, Gabriel</li>
 								<li><input type="checkbox" checked onclick="return false;"> Jackson, Penelope</li>
-								<li><input type="checkbox" checked onclick="return false;"> Lee, Michael</li>
-								<li><input type="checkbox" checked onclick="return false;"> Nguyen, Ethan</li>
+								<li><input type="checkbox" checked onclick="return false;"> Lee, Michael</li>											<li><input type="checkbox" checked onclick="return false;"> Lewis, Benjamin</li>
 								<li><input type="checkbox" checked onclick="return false;"> Patel, Maya</li>
 								<li><input type="checkbox" checked onclick="return false;"> Ramirez, Liam</li>
+								<li><input type="checkbox" checked onclick="return false;"> Robinson, Stella</li>
+								<li><input type="checkbox" checked onclick="return false;"> Wilson, David</li>
 							</ul>
 							<h3>Not assigned to:</h3>
 							<ul style="list-style: none;">
-								<li><input type="checkbox"> Robinson, Stella</li>
+								<li><input type="checkbox"> Hall, Gabriel</li>
+								<li><input type="checkbox"> Nguyen, Ethan</li>
 								<li><input type="checkbox"> Walker, Amelia</li>
-								<li><input type="checkbox"> Wilson, David</li>
 							</ul>
 							<form method="dialog">
-								<button style="float: left;" onclick="document.getElementById('underconstruction').showModal()">Assign</button>
+								<button style="float: left;" onclick="document.getElementById('assigned').showModal()">Assign</button>
 								<button style="float: right;">Close</button>
 							</form>
 						</dialog><!-- END OF ENGAGEMENT MODAL -->
+						<dialog id="assigned"><!-- ASSIGNED RESULT MODAL -->
+							<h2>Assessment successfully assigned</h2>
+							<p>Kosmos Workforce Engagement Assessment successfully assigned to Gabriel Hall.</p>
+							<form method="dialog">
+								<button style="float: right;">Close</button>
+							</form>
+						</dialog><!-- END OF ASSIGNED MODAL -->
 						<tr onclick="document.getElementById('underconstruction').showModal()">
 							<td>Holland Matrix</td>
 							<td>Employee Interests</td>
