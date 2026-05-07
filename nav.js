@@ -29,6 +29,7 @@ class Navmenu extends HTMLElement {
 				<circle cx="9" cy="7" r="4"></circle>
 			</svg>Employees
 		</div>
+<!--
 		<div data-link="assessments.html" onclick="window.location.href='assessments.html'">
 			<svg xmlns="http://www.w3.org/2000/svg"
 				width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -40,7 +41,8 @@ class Navmenu extends HTMLElement {
 				<path d="M4 4v16"></path>
 			</svg>Assessment Library
 		</div>
-		<div onclick="document.getElementById('underconstruction').showModal()">
+-->
+		<div onclick="window.location.href='assessments.html'">
 			<svg xmlns="http://www.w3.org/2000/svg" 
 				width="24" height="24" viewBox="0 0 24 24" fill="none" 
 				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -50,8 +52,9 @@ class Navmenu extends HTMLElement {
 				<path d="M12 11h4"></path>
 				<path d="M12 16h4"></path>
 				<path d="M8 11h.01"></path><path d="M8 16h.01"></path>
-			</svg>Assignments
+			</svg>Assessments
 		</div>
+<!--
 		<div onclick="document.getElementById('underconstruction').showModal()">
 			<svg xmlns="http://www.w3.org/2000/svg" 
 				width="24" height="24" viewBox="0 0 24 24" fill="none" 
@@ -63,6 +66,7 @@ class Navmenu extends HTMLElement {
 				<path d="M8 17v-3"></path>
 			</svg>Results
 		</div>
+-->
 		<div onclick="document.getElementById('underconstruction').showModal()">
 			<svg xmlns="http://www.w3.org/2000/svg"
 				width="24" height="24" viewBox="0 0 24 24" fill="none"
