@@ -2,8 +2,9 @@
 
 a {
 	text-decoration: none;
-	color: unset;
+	color: unset;	
 }
+
 p>a {
 	font-weight: bold;
 }
@@ -68,6 +69,7 @@ input[type="checkbox"][onclick="return false;"] {	/* Targets any checkbox specif
 	accent-color: var(--grey-color); /* Changes the check/fill color to grey */
 	cursor: not-allowed;  /* Visual hint that it's unclickable */
 	filter: grayscale(1);  /* Force-greys the entire element in some browsers */
+	outline: none;
 }
 
 input[type="radio"] {	/* Hide the default radio button visually but keep it focusable */
