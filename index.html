@@ -26,7 +26,7 @@
 			</div>
 			<dialog id="purposealignment"><!-- GAUGE1 MODAL -->
 				<h2>Purpose Alignment</h2>
-				<p>Aligning individual purpose with a company's mission is one of the most powerful drivers of organizational performance. 
+				<p tabindex="-1" autofocus style="outline: none;">Aligning individual purpose with a company's mission is one of the most powerful drivers of organizational performance. 
 					Employees with a strong sense of purpose are 
 					<a href="https://news.gallup.com/opinion/gallup/209849/ways-mission-driven-workplaces-perform-better.aspx" target="_blank">
 					5.6 times</a> more likely to be engaged, 
@@ -44,10 +44,31 @@
 					<button style="float: right;">Close</button>
 				</form>
 			</dialog><!-- END OF GAUGE1 MODAL -->
-			<div class="card" id="gauge2" style="width: 200px; text-align: center;" onclick="window.location.href='strengths.html'">
+			<div class="card" id="gauge2" style="width: 200px; text-align: center;" onclick="document.getElementById('leveragingstrengths').showModal()">
 				<h4>Leveraging Strengths</h4>
 				<script>makeGauge(document.getElementById('gauge2'), 'HEALTH SCORE', 79);</script>
 			</div>
+			<dialog id="leveragingstrengths"><!-- GAUGE2 MODAL -->
+				<h2>Leveraging Strengths</h2>
+				<p tabindex="-1" autofocus style="outline: none;">Every employee brings a distinct set of innate strengths, 
+					and when those strengths are recognized and deliberately paired, 
+					teams become greater than the sum of their parts. 
+					Gallup research confirms this at scale: employees who learn to use their strengths are 7.8% more productive, 
+					and teams that actively focus on strengths daily see 12.5% greater productivity. 
+					The compounding effect of complementary strengths also drives retention, 
+					with strengths-aware teams showing 
+					<a href="https://news.gallup.com/businessjournal/167462/employees-strengths-company-stronger.aspx" target= "_blank">22 times</a>
+					less active disengagement than teams where strengths aren’t appreciated. 
+					Gallup's study of 11,441 teams found that a team's awareness of its own strengths had 
+					<a href="https://www.gallup.com/cliftonstrengths/en/402578/best-teams-people-know-makes-person-unique.aspx" target="_blank">twice the influence</a>
+					on performance as the specific composition of those strengths, meaning visibility is the catalyst. 
+					Organizations that build cultures around strengths identification do not just unlock individual potential; 
+					they engineer the conditions for teams to thrive together.</p>
+				<form method="dialog">
+					<button style="float: left;">Recommendations</button>
+					<button style="float: right;">Close</button>
+				</form>
+			</dialog><!-- END OF GAUGE2 MODAL -->
 			<div class="card" id="gauge3" style="width: 200px; text-align: center;" onclick="document.getElementById('underconstruction').showModal()">
 				<h4>Career Path Visibility</h4>
 				<script>makeGauge(document.getElementById('gauge3'), 'HEALTH SCORE', 93);</script>
@@ -56,10 +77,29 @@
 				<h4>Training Awareness</h4>
 				<script>makeGauge(document.getElementById('gauge4'), 'HEALTH SCORE', 76);</script>
 			</div>
-			<div class="card" id="gauge5" style="width: 200px; text-align: center;" onclick="window.location.href='roleclarity.html'">
+			<div class="card" id="gauge5" style="width: 200px; text-align: center;" onclick="document.getElementById('roleclarity').showModal()">
 				<h4>Role Clarity</h4>
 				<script>makeGauge(document.getElementById('gauge5'), 'HEALTH SCORE', 95);</script>
 			</div>
+			<dialog id="roleclarity"><!-- GAUGE5 MODAL -->
+				<h2>Role Clarity</h2>
+				<p tabindex="-1" autofocus style="outline: none;">For many employees, career growth stalls not from lack of ambition, but lack of clarity. 
+					Without a clear understanding of which skills to develop now, which to build toward their next role, 
+					and which paths are actually available to them, even high-potential employees disengage. 
+					Research bears this out: 
+					<a href="https://novoresume.com/career-blog/career-development-statistics" target="_blank">54% of employees</a>
+					feel entirely on their own when it comes to advancing their careers, 
+					and one in four say they are likely to leave their organization within six months due to insufficient development support. 
+					Yet the cost of inaction is largely self-inflicted. 
+					<a href="https://www.devlinpeck.com/content/employee-training-statistics" target="_blank">Over 90%</a> 
+					of employees say they would not quit if given meaningful development opportunities, 
+					and organizations that invest in clear, structured career pathways see measurable gains in retention, productivity, and performance. 
+					The missing ingredient is rarely motivation. It is visibility.</p>
+				<form method="dialog">
+					<button style="float: left;">Recommendations</button>
+					<button style="float: right;">Close</button>
+				</form>
+			</dialog><!-- END OF GAUGE5 MODAL -->
 			<div class="card" id="gauge6" style="width: 200px; text-align: center;" onclick="document.getElementById('underconstruction').showModal()">
 				<h4>Feeling Supported</h4>
 				<script>makeGauge(document.getElementById('gauge6'), 'HEALTH SCORE', 79);</script>
@@ -76,10 +116,20 @@
 				<h4>Bias to Action</h4>
 				<script>makeGauge(document.getElementById('gauge9'), 'HEALTH SCORE', 82);</script>
 			</div>
-			<div class="card" style="width: 200px; text-align: center;" onclick="document.getElementById('underconstruction').showModal()">
+			<div class="card" style="width: 200px; text-align: center;" onclick="document.getElementById('burnoutlevel').showModal()">
 				<h4>Burnout Level</h4>
 				<script>getAnimatedThermometerSVG(29, 168);</script>
 			</div>
+			<dialog id="burnoutlevel"><!-- BURNOUT MODAL -->
+				<h2>Employee Burnout</h2>
+				<p tabindex="-1" autofocus style="outline: none;">Many common work situations can lead to employee burnout.
+					Often there is no single cause, but a number of small symptoms or patterns, which may be experienced as burnout.
+					Some of the most common preventable causes include micromanagement, misaligned incentives, and lack of connection to purpose.</p>
+				<form method="dialog">
+					<button style="float: left;" onclick="window.location.href=''">Recommendations</button>
+					<button style="float: right;">Close</button>
+				</form>
+			</dialog><!-- END OF BURNOUT MODAL -->
 			<div class="card" style="width: 452px;">
 				<h4> My Team</h4>
 				<table>
